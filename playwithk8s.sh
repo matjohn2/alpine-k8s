@@ -8,8 +8,10 @@ apk add ebtables ethtool socat iproute2
 # Need a running kubelet next for kubeadm to do anything useful.
 # Containerized and bound to real host directories is easiest (we have no init).
 apk add openrc
+openrc
 touch /run/openrc/softlevel
 export KUBERNETES_VERSION=v1.5.4
-alpine-standalone-bin/kubernetes26.sh
+chmod +x alpine-standalone-bin/26kubernetes.sh
+alpine-standalone-bin/26kubernetes.sh
 /etc/init.d/kubelet_bind_mount start
 /etc/init.d/kubelet start
