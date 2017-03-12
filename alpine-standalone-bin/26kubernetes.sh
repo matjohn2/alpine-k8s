@@ -1,7 +1,7 @@
 set -eux
 
 echo "Play with Docker Node IP address is:"
-LOCAL_IP_ETH1=`ifconfig eth1 | grep "inet addr" | cut -d ':' -f 2 | cut -d ' ' -f 1`
+export LOCAL_IP_ETH1=`ifconfig eth1 | grep "inet addr" | cut -d ':' -f 2 | cut -d ' ' -f 1`
 echo ${LOCAL_IP_ETH1}
 
 echo "Pre-loading the hyperkube image gcr.io/google_containers/hyperkube:${KUBERNETES_VERSION}..."
