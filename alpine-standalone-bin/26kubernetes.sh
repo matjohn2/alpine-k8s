@@ -57,13 +57,12 @@ start() {
   /usr/local/bin/docker run -d --restart=on-failure --name kubelet \
        --volume=/:/rootfs:ro \
        --volume=/sys:/sys:ro \
-       --volume=/dev:/dev \
        --volume=/var/lib/docker/:/var/lib/docker:rw \
        --volume=/var/lib/kubelet/:/var/lib/kubelet:shared \
        --volume=/etc:/etc:rw \
        --volume=/opt:/opt:rw \
        --volume=/var/run:/var/run:rw \
-       --net=host --pid=host --privileged=true \
+       --net=host --privileged=true \
        gcr.io/google_containers/hyperkube:${KUBERNETES_VERSION} \
        /hyperkube kubelet \
         --containerized \
