@@ -68,8 +68,6 @@ start() {
        /hyperkube kubelet \
         --containerized \
         --address="0.0.0.0" \
-        --api-servers=http://127.0.0.1:8080 \
-        --require-kubeconfig --kubeconfig=/etc/kubernetes/kubelet.conf \
         --pod-manifest-path=/etc/kubernetes/manifests \
         --allow-privileged=true \
         --v=4 \
